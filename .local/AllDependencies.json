@@ -21926,16 +21926,16 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Skiuileuf\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ActualizarePluginuriServerMinecraft",
       "projectName": "ActualizarePluginuriServerMinecraft",
-      "projectPath": "C:\\Users\\Skiuileuf\\Documents\\UiPath\\ActualizarePluginuriServerMinecraft\\.local",
-      "packagesPath": "C:\\Users\\Skiuileuf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Skiuileuf\\Documents\\UiPath\\ActualizarePluginuriServerMinecraft\\.local",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\ActualizarePluginuriServerMinecraft\\.local",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\ActualizarePluginuriServerMinecraft\\.local",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ]
@@ -21974,7 +21974,7 @@
             "version": "[2.3.2, 2.3.2]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Skiuileuf\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
