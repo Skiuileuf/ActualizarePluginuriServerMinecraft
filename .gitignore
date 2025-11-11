@@ -1,0 +1,5 @@
+# Ignore everything in the local folder
+.local/
+
+# But do not ignore this specific file
+!local/ProjectSettings.json
