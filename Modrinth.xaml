@@ -1,9 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Modrinth" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Modrinth" this:Modrinth.version="1.21.5" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="link" Type="InArgument(x:String)" />
+    <x:Property Name="version" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,571</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1222,1456</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -31,6 +32,19 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -60,13 +74,192 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Modrinth" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Modrinth" sap:VirtualizedContainerService.HintSize="546,1391" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: DiscordSRV - Minecraft Plugin" sap:VirtualizedContainerService.HintSize="484,1280" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2c4c702e-1902-49af-9201-728362dd36bd" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1063" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="modsList" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Versions'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv" DesignTimeRectangle="583, 352, 61, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Versions'" FullSelectorArgument="&lt;webctrl aaname='Versions' class='text-nowrap' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Versions' class='text-nowrap' tag='SPAN' type='' check:innerText='Versions' /&gt;" Guid="0e19a91b-ad69-4fd5-9c2f-04a2233bd0b6" InformativeScreenshot="47816e437560469f04e8629d2a426489.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="345, 340, 319, 44" FriendlyName="'DescriptionChangelogVer…'" FullSelectorArgument="&lt;webctrl tag='NAV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='NAV' type='' class='card-shadow experimental-styles-within relative flex w-fit overflow-x-auto rounded-full bg-bg-raised p-1 text-sm font-bold mb-4' aaname='' check:innerText='Description&amp;#xD;&amp;#xA;Changelog&amp;#xD;&amp;#xA;Versions' /&gt;" ImageBase64="" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="454, 408, 20, 20" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg' idx='2' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='h-5 w-5 text-secondary' tag='svg' aaname='' /&gt;" Guid="9db65a05-beac-4075-8aaf-63de520d4d62" InformativeScreenshot="cd89f27c612ee7c929ea751905348b7f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="345, 400, 142, 36" ElementType="Button" FriendlyName="'Platform'" FullSelectorArgument="&lt;webctrl aaname=' Platform ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Platform ' tag='BUTTON' type='' class='' check:innerText='Platform' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Paper'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="366, 530, 111, 36" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Paper'" FullSelectorArgument="&lt;webctrl aaname='Paper' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Paper' tag='BUTTON' type='' class='btn btn-transparent color-accent-contrast !w-full' check:innerText='Paper' /&gt;" Guid="033453bc-360f-4366-a000-5e3fa3df472d" InformativeScreenshot="7e8b4c909f500da1e8ee4bfff6da020d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="345, 400, 142, 36" ElementType="Button" FriendlyName="'Platform'" FullSelectorArgument="&lt;webctrl aaname=' Platform ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Platform ' tag='BUTTON' type='' class='' check:innerText='Platform' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Game versions'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="494, 400, 191, 36" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Game versions'" FullSelectorArgument="&lt;webctrl aaname=' Game versions ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Game versions ' tag='BUTTON' type='' class='' check:innerText='Game versions' /&gt;" Guid="23017919-03f6-4a52-b578-5fcc70e92410" InformativeScreenshot="76dbfae4d6674c6e4617161719ad98e6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT search-input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="404, 450, 272, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT search-input'" FullSelectorArgument="&lt;webctrl id='search-input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-input' tag='INPUT' type='text' class='' aaname='Search...' /&gt;" Guid="c1f6ffb0-b612-4551-8799-953426807765" InformativeScreenshot="2a7a0903ba4e09554fe50fe8b352e7cd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="494, 400, 191, 36" ElementType="Button" FriendlyName="'Game versions'" FullSelectorArgument="&lt;webctrl aaname=' Game versions ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Game versions ' tag='BUTTON' type='' class='' check:innerText='Game versions' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">version</CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <ui:FindChildren DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+              <ui:FindChildren.Children>
+                <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
+                  <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">modsList</CSharpReference>
+                </OutArgument>
+              </ui:FindChildren.Children>
+              <ui:FindChildren.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a690c269-9179-4723-8744-38358313dea0" InformativeScreenshot="4834a46d0c1bd3964bf8ae98c0532d1f" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div' idx='2' parentid='__nuxt' tag='DIV' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:FindChildren.Target>
+            </ui:FindChildren>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click first download button on page" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="1157, 575, 36, 36" DesignTimeScaleFactor="1" FriendlyName="'A'" FullSelectorArgument="&lt;webctrl aria-label='Download' tag='A' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Download' tag='A' type='' class='group-hover:!bg-brand group-hover:[&amp;amp;&amp;gt;svg]:!text-brand-inverted v-popper--has-tooltip' aaname='' /&gt;" Guid="cd03d7ec-69cc-40b5-9406-b218bb69e3cd" ImageBase64="" InformativeScreenshot="a537590fda2baf58cef6d4af6adf417b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAApCSURBVHhezZsJrCZFEcdXXFlRd0GOXXVXdHVBQRRQ0V2J4hFFRAKiRiIeAQXCeiYKAjEcAsrhEUWQKKgxIQpokIAXckiC4AmewAIqgvctKgiI8v/N6+qt6an5eubzvd2t5Je86emq6emvp7uqut+82ZSla1bX2Eg8RGwhlorl4nFiM9HU8WJlJRucRI1MPFRsL14u3i0+Jb4mviN+LG4WPxMHiUbHxK4nsd4lapTgpZ8ljhaXid+Ie8T/eviv2E80+iZ2LR4u6KBVgtHj7zWsc4kaIZaIA8RXxV9F9LIRfxG7iMaOiV2LncWfBDa/JF4nFgtfp2HOZcGqZZ2HCr7nQ8V3xb0ieslJ3CiYDxp7JnYtXib8COIZ3xJvFIwOXzdpz4GUDxLzxUvFN8R/hH+pMXxd5KFtYtficBHp0RGXit3FA4XXSVZmSUrj4lHig+JvImrcGD4mGrteUtkDxNki0jP4hE4WfIKm17E3tZRGxUpxpYgaMw1vF41tE7sWDxOMsEivhNHwdOH1k8UppTQm9hU/F1EDpoFve0/R2Dexa/EYwTIZ6UbcJPYS3kayOlIKIwxFZvg/iujBQ2AWZ+2/WJwp3iveKR4pWg21a7GruENE9vr4ndhfeDvJ8kAplcWBYszSZtBhF4m3CT4dvtMFInpGenrr+S8WfxCR7UmwbL5GeFvJekVKJfEKMfaX/6X4gHiG2EREdlt4ceUPFjhAHxa/EtGz+mAktD6HQeIVBB7dL0T0gIi/C2b1J4vSVqYmgQ6fIA7RWeIfInp2BHNCa2KcKL6iWCauEpHhiGvF3gL/oLSVnjBcIhtiY8GI/JGI2hCBO/4Ike30iqv0IHGaiAyW4MufL7YR3kZDn0R1SybUe6K4UETtiThVZGcpFLuZwP0cMvviATLkNxctG5GUdQoY5gRSrXKTslxsJXCS7hNR2zxM4HuIrN8Rd5NA45siMuThlz9DLBReP1msvjDgAm8nWLawhVv8EtGqZ1KWC/IINU/RuFwQtzS6LbHCBEvWkF49T7R+eS++3MH88GjB8vYecYn4tfCxxK2itxOQ4h4j4YvCty2CZxwism4WV8jE90MRGfB8TzxedI1JfHliR/FW8TmxRtwpIrtGpxNK8fcEc8KQiZFETI4ZIkOrRe3X53siCsx6Xnx54oVijDtr0An4EY2dSOxegqxTbd4igsSpy3rewKZiSODxEdEKP018WYJEx/UislPjy4JYoLEVid1LsHJ9XES2PCyLi8SMXftDPF/UnAwCISatrOfFl4ttBYmLyE4NMj/55aFPfB3Bp3a7iGwajJLniRm79oc4SUQKHgKYrOPFlwsyPF8RkY0anZeHSeLqsZR+SER2Pe8TM3bTHywnV4uosvFbsZMwnfT4zsuTpjpHRDZqjH55pKj/TFGLXfBw+eSz8lMFEVRU2cDbwxVtdEzsOsG6zhyBjxDZmMRUL2/idAi+iECjZxh0UPNjmhKZ1kmzPy90sMgPMnFlrPGkwielwD3MyKTMmXgZklsLby89YZgUuiy50TMNfIImXDYFcmpRRYOYPA9/L6mMVYEl9J8i0i9hQ+T1gk2TjicJ04jT5zMgVxg922jmMyqzfHw+FfZByjt7fV5SGUOXl4p0SwiZXyVMt8O04mzgztccunPFfCozAdZ8fzy4MJpKZfyKV4hI18OnRM/PSRrb2WOuqkWLxAYLqYz7+9NU2AfhZNhQKxfHi0jXw+SUAxIYI17P48WVf1REbTDIXyym4gpRy/QeIToPQ6xcvEj8S0T6xptE1qmJrzsJL678WBG1wSBbtJyKeGy1tNdbROdhiJULsrs/EZG+gauKsxLaQuzeBPhkSXOxrd6UebEy0bejZPCjr6DikA54s+g8DLFywd4/29+RvvF9saWo2fLgWxDtsYOMj3GNICB7v8j1TFzZYSJqg5E7gFRW7ROgN1sPQqzMwd7BJH+CrTSyvFnHxJcl+JUtZ0BGuNx4zd4cmNi1OEb4+iWsWs0nQIKiFrERJ+QH2d8FOwhc4Fo4/RnR2dUtIDCrLauhb2LXgtES6RnXiSVUpDEMq6iSwYt1lq4E3/5RYmj6nKWQ9HZfJzxbkDSJdD3YaZ0ssb8Fvs0XRKRn4IEuojJr5gWpsA86KA+3BAlMcnlkWcb6/tYJfH54g88VOEfvEjeISCeCyK9pT9EBLLXMN5GO8VnROELALk5UySASfJKgLiNhN0Gn3SWi+kPAH2cHiR0cXGifFxwCQzhvehQdQHBXiwhPFFnpDWLSr0jj8N3JA7JNNXarbLbh1+1shTsI3Grv02ygmgLBQ23zk51djrNE99YlxCWtvEQBnzShe6RrdMJhvhkyvVHlDYnaywNpMcLsSN8g9mklRIChHVWeFoYZa/UPXNn/Q/jyxbcPQ2KStcu6/SHIw9fy9UNhGePoCyPrKYLGR/WGwiqEHd/e6OXxamv+A4nfF4gZG/aHoLHfFpHSUPi2WJpoiLf9NDFkwyWCXCVOlrcXvTyuOO5xZMPD+aa1HqT9kcChiZRqsBzieDxH9DlMnBCphd24u3h4zPKs00eKsjObl0eKcjZganlNVoYc10Bp6AlizC4Obi+5/1eLzs5uAB1EGIouc8SfBVtadN5xgr1/hjqjMexIk6Icd37Ihi7RKnVbtkpjBCCRcgnzBXU75/PAJLiHE8VExTrMp0H6Ctc1qtvCpCgnG/VpEbXRw6/Poaysm8UXCo6w1+J6IPtLB7QaH4m/P4ZIijqkwE8RQ7xI5rfOibQsdiNBkHG3iAx5/i3ohM4p7lLK+yU1CXQ4REk2e0gankxVKxHbEX9TYJxEaGSshAZwSqR1DgdmQ0qbCbbeOBhR5gj6+ITIx/N6xSokiNJqs7aHo6ocbCztNEwjgR3SaUSOY47q4oPwWWc7E8VXFBxj/b2IDEfggpKM7OzyGGOk0H2sOEGMaQ+nT0iuZDtV8ZUTzAdjzuYBSxs5OTLOOCiR3RAvrpwDGWNGI5B+I4L1dpLlihRK7PnxMtO4yeQaSXwwAZH8YG7JWeE+TFwZ+3iTwtsS8gvsD7Y6f5R4RcFSRydgOHpgDSbK2wS7R0xIJCzZI+C4CrkI/vujfXZHYteCQxkM58h2CVtvHPRqHdicSrwBgUFOWU1zeLkP+1WZzV8pWo21a8EyyxG6Ur+EOYjM9PS/fCneUIKJccxR1aHk/B4Ez66FuWx1EQ+09GZFSqOCjQoyxThCUWOmoZbnp+OjHCRluMJMuL5+sjBLUhoXDEu+4dkaDYTSnAhv7JvYtYi24EmMvlZ0juTPiZQPSbA+E8ndInzjxsJ8wGTY2DWxa+HT90SU/Cdqjuw8cy7RQwVxO/kEcovTfhqfFHkCM7Frwf4gO9WtU6rGOpWoAQnC230E/xdEFmjM//yQeZ60HIZO1aJ3rEw114NEDUrg8NAZbHWx5p8uODvIbM3nwoYnmyLA4UYSMWxX5YOYJnYdsUFJ1MACJis6hSHMv9WQEAFyfpRx8js7MHMv8+bdDwNfAGrHGZTgAAAAAElFTkSuQmCC" InformativeScreenshot="9aa51123231f74f0bdf9557efdb0e0eb.jpg" Selector="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" Title="DiscordSRV - Minecraft Plugin" Url="https://modrinth.com/plugin/discordsrv" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>

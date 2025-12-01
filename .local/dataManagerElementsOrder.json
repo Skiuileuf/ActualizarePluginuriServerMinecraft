@@ -3,7 +3,9 @@
     {
       "Path": null,
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&"
+      ],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -12,9 +14,10 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "versions&Sequence_1",
-        "serverConfigurations&Sequence_1",
+        "supportedPlatforms&Sequence_11",
         "selectedConfiguration&Sequence_1",
+        "serverConfigurations&Sequence_1",
+        "versions&Sequence_1",
         "minecraftVersion&Sequence_1",
         "excelContents&Sequence_1"
       ],
@@ -35,22 +38,63 @@
     {
       "Path": "Modrinth.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "modsList&Sequence_2"
+      ],
       "ArgumentsSectionElementsOrder": [
+        "version",
         "link"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "ScrapePluginsToExcelFile.xaml",
+      "Path": "GetAllMinecraftVersions.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "excelContents&Sequence_1",
-        "selectedConfiguration&Sequence_1",
+        "jsonObject&Sequence_1",
+        "httpRequestResult&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "versions"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "ConfigEditor.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "configurationObject&Sequence_2",
+        "strFileContents&Sequence_2",
+        "supportedPlatforms&Sequence_4",
         "serverConfigurations&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "EditTrigger.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "TriggerEventArgs"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "CreateTrigger.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "TriggerEventArgs"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

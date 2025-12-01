@@ -224,7 +224,7 @@
           }
         }
       },
-      "HtmlAgilityPack/1.11.38": {
+      "HtmlAgilityPack/1.11.46": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {
@@ -1143,7 +1143,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/1.1.0": {
+      "Microsoft.NETCore.Targets/1.1.3": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -1394,6 +1394,34 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.2592.51": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/_._": {
+            "assetType": "native",
+            "rid": "win-x64"
           }
         }
       },
@@ -2018,6 +2046,58 @@
         "runtime": {
           "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SocketIO.Core/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SocketIO.Core.dll": {}
+        }
+      },
+      "SocketIO.Serializer.Core/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SocketIO.Core": "3.1.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SocketIO.Serializer.Core.dll": {}
+        }
+      },
+      "SocketIO.Serializer.SystemTextJson/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SocketIO.Core": "3.1.2",
+          "SocketIO.Serializer.Core": "3.1.2",
+          "System.Text.Json": "8.0.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SocketIO.Serializer.SystemTextJson.dll": {}
+        }
+      },
+      "SocketIOClient/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SocketIO.Serializer.Core": "3.1.2",
+          "SocketIO.Serializer.SystemTextJson": "3.1.2"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SocketIOClient.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -3270,11 +3350,11 @@
           }
         }
       },
-      "System.Runtime/4.3.0": {
+      "System.Runtime/4.3.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3"
         },
         "compile": {
           "ref/netstandard1.5/_._": {
@@ -3941,36 +4021,55 @@
           }
         }
       },
-      "System.Text.Encodings.Web/5.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Json/5.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.RegularExpressions/4.3.0": {
+      "System.Text.Encodings.Web/8.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.3.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/8.0.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "System.Text.Encodings.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Text.RegularExpressions/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.1"
         },
         "compile": {
           "ref/netcoreapp1.1/_._": {}
@@ -4397,6 +4496,99 @@
           }
         }
       },
+      "UiPath.Form.Activities/25.10.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Activities.ViewModels": "1.0.0-20250814.2",
+          "UiPath.Platform": "24.11.1",
+          "UiPath.Studio.Forms.Runtime": "25.10.0",
+          "UiPath.Telemetry.Client": "2.3.3"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/UiPath.Forms.Activities.Design.dll": {},
+          "lib/net6.0-windows7.0/UiPath.Forms.Activities.dll": {}
+        },
+        "resource": {
+          "lib/net6.0-windows7.0/de/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/de/UiPath.Forms.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.Forms.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.Forms.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.Forms.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.Forms.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.Forms.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.Forms.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.Forms.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.Forms.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.Forms.Activities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.Forms.Activities.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zu/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "zu"
+          },
+          "lib/net6.0-windows7.0/zu/UiPath.Forms.Activities.resources.dll": {
+            "locale": "zu"
+          }
+        }
+      },
       "UiPath.ImageProcessing/23.4.0": {
         "type": "package",
         "compile": {
@@ -4689,7 +4881,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "UiPath.OpenTelemetry.Contracts/2.1.3": {
+      "UiPath.OpenTelemetry.Contracts/2.3.3": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "6.0.0"
@@ -4752,6 +4944,71 @@
           },
           "lib/net6.0-windows7.0/zh-CN/UiPath.Platform.resources.dll": {
             "locale": "zh-CN"
+          }
+        }
+      },
+      "UiPath.Studio.Forms.Runtime/25.10.0": {
+        "type": "package",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.46",
+          "Microsoft.Web.WebView2": "1.0.2592.51",
+          "SocketIOClient": "3.1.2",
+          "System.Text.Json": "8.0.5",
+          "System.Text.RegularExpressions": "4.3.1",
+          "UiPath.Platform": "24.11.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/UiPath.Studio.Forms.Runtime.dll": {}
+        },
+        "resource": {
+          "lib/net6.0-windows7.0/de/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zu/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "zu"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
           }
         }
       },
@@ -4911,13 +5168,13 @@
           }
         }
       },
-      "UiPath.Telemetry.Client/2.1.3": {
+      "UiPath.Telemetry.Client/2.3.3": {
         "type": "package",
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "13.0.1",
           "System.Threading.Tasks.Dataflow": "5.0.0",
           "System.ValueTuple": "4.5.0",
-          "UiPath.OpenTelemetry.Contracts": "2.1.3"
+          "UiPath.OpenTelemetry.Contracts": "2.3.3"
         },
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -5848,7 +6105,7 @@
           }
         }
       },
-      "HtmlAgilityPack/1.11.38": {
+      "HtmlAgilityPack/1.11.46": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {
@@ -6679,7 +6936,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/1.1.0": {
+      "Microsoft.NETCore.Targets/1.1.3": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -6880,6 +7137,31 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.2592.51": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "native": {
+          "runtimes/win-x64/native/_._": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Microsoft.Win32.Primitives/4.3.0": {
@@ -7422,7 +7704,7 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
           "Microsoft.NETCore.Targets": "1.1.0",
-          "runtime.win7-x64.runtime.native.System.IO.Compression": "4.3.0"
+          "runtime.win7-x64.runtime.native.System.IO.Compression": "4.3.2"
         },
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -7538,7 +7820,7 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "runtime.win.System.Console/4.3.0": {
+      "runtime.win.System.Console/4.3.1": {
         "type": "package",
         "dependencies": {
           "System.IO": "4.3.0",
@@ -7655,7 +7937,7 @@
           "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.0": {
+      "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.2": {
         "type": "package",
         "native": {
           "runtimes/win7-x64/native/_._": {}
@@ -7680,6 +7962,58 @@
         "runtime": {
           "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SocketIO.Core/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SocketIO.Core.dll": {}
+        }
+      },
+      "SocketIO.Serializer.Core/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SocketIO.Core": "3.1.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SocketIO.Serializer.Core.dll": {}
+        }
+      },
+      "SocketIO.Serializer.SystemTextJson/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SocketIO.Core": "3.1.2",
+          "SocketIO.Serializer.Core": "3.1.2",
+          "System.Text.Json": "8.0.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SocketIO.Serializer.SystemTextJson.dll": {}
+        }
+      },
+      "SocketIOClient/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SocketIO.Serializer.Core": "3.1.2",
+          "SocketIO.Serializer.SystemTextJson": "3.1.2"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SocketIOClient.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -7890,7 +8224,7 @@
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
-          "runtime.win.System.Console": "4.3.0"
+          "runtime.win.System.Console": "4.3.1"
         },
         "compile": {
           "ref/netstandard1.3/_._": {
@@ -8837,11 +9171,11 @@
           }
         }
       },
-      "System.Runtime/4.3.0": {
+      "System.Runtime/4.3.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3",
           "runtime.any.System.Runtime": "4.3.0"
         },
         "compile": {
@@ -9414,36 +9748,49 @@
           }
         }
       },
-      "System.Text.Encodings.Web/5.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Json/5.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.RegularExpressions/4.3.0": {
+      "System.Text.Encodings.Web/8.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.3.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Text.Json/8.0.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "System.Text.Encodings.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Text.RegularExpressions/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.1"
         },
         "compile": {
           "ref/netcoreapp1.1/_._": {}
@@ -9877,6 +10224,99 @@
           }
         }
       },
+      "UiPath.Form.Activities/25.10.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Activities.ViewModels": "1.0.0-20250814.2",
+          "UiPath.Platform": "24.11.1",
+          "UiPath.Studio.Forms.Runtime": "25.10.0",
+          "UiPath.Telemetry.Client": "2.3.3"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/UiPath.Forms.Activities.Design.dll": {},
+          "lib/net6.0-windows7.0/UiPath.Forms.Activities.dll": {}
+        },
+        "resource": {
+          "lib/net6.0-windows7.0/de/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/de/UiPath.Forms.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.Forms.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.Forms.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.Forms.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.Forms.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.Forms.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.Forms.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.Forms.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.Forms.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.Forms.Activities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.Forms.Activities.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zu/UiPath.Forms.Activities.Design.resources.dll": {
+            "locale": "zu"
+          },
+          "lib/net6.0-windows7.0/zu/UiPath.Forms.Activities.resources.dll": {
+            "locale": "zu"
+          }
+        }
+      },
       "UiPath.ImageProcessing/23.4.0": {
         "type": "package",
         "compile": {
@@ -10169,7 +10609,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "UiPath.OpenTelemetry.Contracts/2.1.3": {
+      "UiPath.OpenTelemetry.Contracts/2.3.3": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "6.0.0"
@@ -10232,6 +10672,71 @@
           },
           "lib/net6.0-windows7.0/zh-CN/UiPath.Platform.resources.dll": {
             "locale": "zh-CN"
+          }
+        }
+      },
+      "UiPath.Studio.Forms.Runtime/25.10.0": {
+        "type": "package",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.46",
+          "Microsoft.Web.WebView2": "1.0.2592.51",
+          "SocketIOClient": "3.1.2",
+          "System.Text.Json": "8.0.5",
+          "System.Text.RegularExpressions": "4.3.1",
+          "UiPath.Platform": "24.11.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/UiPath.Studio.Forms.Runtime.dll": {}
+        },
+        "resource": {
+          "lib/net6.0-windows7.0/de/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zu/UiPath.Studio.Forms.Runtime.resources.dll": {
+            "locale": "zu"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
           }
         }
       },
@@ -10391,13 +10896,13 @@
           }
         }
       },
-      "UiPath.Telemetry.Client/2.1.3": {
+      "UiPath.Telemetry.Client/2.3.3": {
         "type": "package",
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "13.0.1",
           "System.Threading.Tasks.Dataflow": "5.0.0",
           "System.ValueTuple": "4.5.0",
-          "UiPath.OpenTelemetry.Contracts": "2.1.3"
+          "UiPath.OpenTelemetry.Contracts": "2.3.3"
         },
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -11406,14 +11911,14 @@
         "lib/netstandard2.0/Google.Apis.PeopleService.v1.xml"
       ]
     },
-    "HtmlAgilityPack/1.11.38": {
-      "sha512": "DC1j3GzU9lBp8hSXb9eYRHiJOUS5sxjBjme/4RTYjTXlgiFCOMXkIY+rmL+BtUss1pCwCN4LaVlZ/ci/fWY+lA==",
+    "HtmlAgilityPack/1.11.46": {
+      "sha512": "dLMn4EVfJBHWmWK4Uh0XGD76FPLHI0qr2Tm0s1m/xmgiHb1JUb9zB8AzO8HtrkBBlMN6JfCUBYddhqC0hZNR+g==",
       "type": "package",
-      "path": "htmlagilitypack/1.11.38",
+      "path": "htmlagilitypack/1.11.46",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "htmlagilitypack.1.11.38.nupkg.sha512",
+        "htmlagilitypack.1.11.46.nupkg.sha512",
         "htmlagilitypack.nuspec",
         "lib/Net35/HtmlAgilityPack.dll",
         "lib/Net35/HtmlAgilityPack.pdb",
@@ -12830,17 +13335,17 @@
         "version.txt"
       ]
     },
-    "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+    "Microsoft.NETCore.Targets/1.1.3": {
+      "sha512": "3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
       "type": "package",
-      "path": "microsoft.netcore.targets/1.1.0",
+      "path": "microsoft.netcore.targets/1.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.targets.1.1.0.nupkg.sha512",
+        "microsoft.netcore.targets.1.1.3.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
       ]
@@ -13283,6 +13788,98 @@
         "lib/netstandard2.0/Microsoft.VisualStudio.OLE.Interop.xml",
         "microsoft.visualstudio.ole.interop.16.7.30328.74.nupkg.sha512",
         "microsoft.visualstudio.ole.interop.nuspec"
+      ]
+    },
+    "Microsoft.Web.WebView2/1.0.2592.51": {
+      "sha512": "AC9aWCthS2JvddYA1jl4dFpLBW3GsLRInhp5dkcBzaFXsRehfoUN9olIUsrH41eNaNYd7z9NRvmy81aUA5aD1g==",
+      "type": "package",
+      "path": "microsoft.web.webview2/1.0.2592.51",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "WebView2.idl",
+        "WebView2.tlb",
+        "build/Common.targets",
+        "build/Microsoft.Web.WebView2.targets",
+        "build/WebView2Rules.Project.xml",
+        "build/native/Microsoft.Web.WebView2.targets",
+        "build/native/arm64/WebView2Loader.dll",
+        "build/native/arm64/WebView2Loader.dll.lib",
+        "build/native/arm64/WebView2LoaderStatic.lib",
+        "build/native/include-winrt/WebView2Interop.h",
+        "build/native/include-winrt/WebView2Interop.idl",
+        "build/native/include-winrt/WebView2Interop.tlb",
+        "build/native/include/WebView2.h",
+        "build/native/include/WebView2EnvironmentOptions.h",
+        "build/native/x64/WebView2Loader.dll",
+        "build/native/x64/WebView2Loader.dll.lib",
+        "build/native/x64/WebView2LoaderStatic.lib",
+        "build/native/x86/WebView2Loader.dll",
+        "build/native/x86/WebView2Loader.dll.lib",
+        "build/native/x86/WebView2LoaderStatic.lib",
+        "build/wv2winrt.targets",
+        "lib/Microsoft.Web.WebView2.Core.winmd",
+        "lib/net462/Microsoft.Web.WebView2.Core.dll",
+        "lib/net462/Microsoft.Web.WebView2.Core.xml",
+        "lib/net462/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/net462/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/net462/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/net462/Microsoft.Web.WebView2.Wpf.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.xml",
+        "microsoft.web.webview2.1.0.2592.51.nupkg.sha512",
+        "microsoft.web.webview2.nuspec",
+        "runtimes/win-arm64/native/WebView2Loader.dll",
+        "runtimes/win-arm64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x64/native/WebView2Loader.dll",
+        "runtimes/win-x64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x86/native/WebView2Loader.dll",
+        "runtimes/win-x86/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "tools/VisualStudioToolsManifest.xml",
+        "tools/wv2winrt/Antlr3.Runtime.dll",
+        "tools/wv2winrt/Antlr4.StringTemplate.dll",
+        "tools/wv2winrt/System.Buffers.dll",
+        "tools/wv2winrt/System.CommandLine.DragonFruit.dll",
+        "tools/wv2winrt/System.CommandLine.Rendering.dll",
+        "tools/wv2winrt/System.CommandLine.dll",
+        "tools/wv2winrt/System.Memory.dll",
+        "tools/wv2winrt/System.Numerics.Vectors.dll",
+        "tools/wv2winrt/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/wv2winrt/codegen_util.dll",
+        "tools/wv2winrt/concrt140_app.dll",
+        "tools/wv2winrt/cs/System.CommandLine.resources.dll",
+        "tools/wv2winrt/de/System.CommandLine.resources.dll",
+        "tools/wv2winrt/es/System.CommandLine.resources.dll",
+        "tools/wv2winrt/fr/System.CommandLine.resources.dll",
+        "tools/wv2winrt/it/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ja/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ko/System.CommandLine.resources.dll",
+        "tools/wv2winrt/msvcp140_1_app.dll",
+        "tools/wv2winrt/msvcp140_2_app.dll",
+        "tools/wv2winrt/msvcp140_app.dll",
+        "tools/wv2winrt/pl/System.CommandLine.resources.dll",
+        "tools/wv2winrt/pt-BR/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ru/System.CommandLine.resources.dll",
+        "tools/wv2winrt/tr/System.CommandLine.resources.dll",
+        "tools/wv2winrt/type_hierarchy.dll",
+        "tools/wv2winrt/vcamp140_app.dll",
+        "tools/wv2winrt/vccorlib140_app.dll",
+        "tools/wv2winrt/vcomp140_app.dll",
+        "tools/wv2winrt/vcruntime140_app.dll",
+        "tools/wv2winrt/winrt_winmd.dll",
+        "tools/wv2winrt/winrt_winmd.winmd",
+        "tools/wv2winrt/wv2winrt.exe",
+        "tools/wv2winrt/wv2winrt.exe.config",
+        "tools/wv2winrt/wv2winrt.xml",
+        "tools/wv2winrt/zh-Hans/System.CommandLine.resources.dll",
+        "tools/wv2winrt/zh-Hant/System.CommandLine.resources.dll"
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
@@ -14575,17 +15172,17 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll"
       ]
     },
-    "runtime.win.System.Console/4.3.0": {
-      "sha512": "RRACWygml5dnmfgC1SW6tLGsFgwsUAKFtvhdyHnIEz4EhWyrd7pacDdY95CacQJy7BMXRDRCejC9aCRC0Y1sQA==",
+    "runtime.win.System.Console/4.3.1": {
+      "sha512": "vHPXC3B18dxhyipVce8xQT1MQv1o5srYZqBlCNu9p9MNjhgGOntdQh/Xh2X4o7M2F839YUcQiGwu8Q498FyDjg==",
       "type": "package",
-      "path": "runtime.win.system.console/4.3.0",
+      "path": "runtime.win.system.console/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard/_._",
-        "runtime.win.system.console.4.3.0.nupkg.sha512",
+        "runtime.win.system.console.4.3.1.nupkg.sha512",
         "runtime.win.system.console.nuspec",
         "runtimes/win/lib/net/_._",
         "runtimes/win/lib/netcore50/System.Console.dll",
@@ -14685,18 +15282,19 @@
         "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll"
       ]
     },
-    "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.0": {
-      "sha512": "UamDlgSO/nIzc96M+g3wbvAGbAuXjvRYR5Ttm/FVJgt2iva8ouOqSJ0j6eGI7pZDLvD/ZISl9XRZOajE/Xvizg==",
+    "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.2": {
+      "sha512": "QZj+xNVPDGJV1hs/bW5HIhiN/LOpKvmPlJiWr9H2kqucFKD0ZzZJYzJbE1W267QEe/Rl+WXODdmfrZuv8b9tVw==",
       "type": "package",
-      "path": "runtime.win7-x64.runtime.native.system.io.compression/4.3.0",
+      "path": "runtime.win7-x64.runtime.native.system.io.compression/4.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "runtime.win7-x64.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
+        "runtime.win7-x64.runtime.native.system.io.compression.4.3.2.nupkg.sha512",
         "runtime.win7-x64.runtime.native.system.io.compression.nuspec",
-        "runtimes/win7-x64/native/clrcompression.dll"
+        "runtimes/win7-x64/native/clrcompression.dll",
+        "runtimes/win7-x64/nativeassets/netcore50/clrcompression.dll"
       ]
     },
     "runtime.win7.System.Private.Uri/4.3.0": {
@@ -14735,6 +15333,59 @@
         "lib/netstandard2.1/ICSharpCode.SharpZipLib.xml",
         "sharpziplib.1.3.3.nupkg.sha512",
         "sharpziplib.nuspec"
+      ]
+    },
+    "SocketIO.Core/3.1.2": {
+      "sha512": "tb6vZ7DYhZooRGLHTPK7/Gifbu+kHbkQRbsee0LAnI28pWc5+Br+juh4pvid3kfIrGTl5dzAfy5huLELVU4svA==",
+      "type": "package",
+      "path": "socketio.core/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SocketIO.Core.dll",
+        "socketio.core.3.1.2.nupkg.sha512",
+        "socketio.core.nuspec"
+      ]
+    },
+    "SocketIO.Serializer.Core/3.1.2": {
+      "sha512": "/cJtU3JVzjqP/Jh3BpMMR0aNzYua6s9e3+hjZ6OnYprFHrGYyg/n9OcST1dBjmOvvgyJ3GwJlyq0NjnPETAHsA==",
+      "type": "package",
+      "path": "socketio.serializer.core/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SocketIO.Serializer.Core.dll",
+        "socketio.serializer.core.3.1.2.nupkg.sha512",
+        "socketio.serializer.core.nuspec"
+      ]
+    },
+    "SocketIO.Serializer.SystemTextJson/3.1.2": {
+      "sha512": "AA8w3Y4JldC3FaL1D4WuyG4zLPdrzjf8AQx1LCKtzlMlTLOcbEW0UGt+BhKxkUnxYAD5O5fsqRrTNCGXu6VeWA==",
+      "type": "package",
+      "path": "socketio.serializer.systemtextjson/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SocketIO.Serializer.SystemTextJson.dll",
+        "socketio.serializer.systemtextjson.3.1.2.nupkg.sha512",
+        "socketio.serializer.systemtextjson.nuspec"
+      ]
+    },
+    "SocketIOClient/3.1.2": {
+      "sha512": "CMmnmhvG1Qf8k6BPh3RLqc/9MNvGUlCOyptjoP8a62bowPQkHTWvN25yy+gQqx5Ry/NgzkQHBJNpmRJhZNZrVQ==",
+      "type": "package",
+      "path": "socketioclient/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/SocketIOClient.dll",
+        "lib/net462/SocketIOClient.xml",
+        "lib/net6.0/SocketIOClient.dll",
+        "lib/net6.0/SocketIOClient.xml",
+        "lib/netstandard2.0/SocketIOClient.dll",
+        "lib/netstandard2.0/SocketIOClient.xml",
+        "socketioclient.3.1.2.nupkg.sha512",
+        "socketioclient.nuspec"
       ]
     },
     "System.Activities.ViewModels/1.0.0-20250814.2": {
@@ -17701,10 +18352,10 @@
         "system.resources.resourcemanager.nuspec"
       ]
     },
-    "System.Runtime/4.3.0": {
-      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+    "System.Runtime/4.3.1": {
+      "sha512": "abhfv1dTK6NXOmu4bgHIONxHyEqFjW8HwXPmpY9gmll+ix9UNo4XDcmzJn6oLooftxNssVHdJC1pGT9jkSynQg==",
       "type": "package",
-      "path": "system.runtime/4.3.0",
+      "path": "system.runtime/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -17789,7 +18440,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.runtime.4.3.0.nupkg.sha512",
+        "system.runtime.4.3.1.nupkg.sha512",
         "system.runtime.nuspec"
       ]
     },
@@ -19268,58 +19919,118 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
-    "System.Text.Encodings.Web/5.0.0": {
-      "sha512": "EEslUvHKll1ftizbn20mX3Ix/l4Ygk/bdJ2LY6/X6FlGaP0RIhKMo9nS6JIGnKKT6KBP2PGj6JC3B9/ZF6ErqQ==",
+    "System.Text.Encodings.Web/8.0.0": {
+      "sha512": "yev/k9GHAEGx2Rg3/tU6MQh4HGBXJs70y7j1LaM1i/ER9po+6nnQ6RRqTJn1E7Xu0fbIFK80Nh5EoODxrbxwBQ==",
       "type": "package",
-      "path": "system.text.encodings.web/5.0.0",
+      "path": "system.text.encodings.web/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Encodings.Web.dll",
-        "lib/net461/System.Text.Encodings.Web.xml",
-        "lib/netcoreapp3.0/System.Text.Encodings.Web.dll",
-        "lib/netcoreapp3.0/System.Text.Encodings.Web.xml",
-        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
-        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "buildTransitive/net461/System.Text.Encodings.Web.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "lib/net462/System.Text.Encodings.Web.dll",
+        "lib/net462/System.Text.Encodings.Web.xml",
+        "lib/net6.0/System.Text.Encodings.Web.dll",
+        "lib/net6.0/System.Text.Encodings.Web.xml",
+        "lib/net7.0/System.Text.Encodings.Web.dll",
+        "lib/net7.0/System.Text.Encodings.Web.xml",
+        "lib/net8.0/System.Text.Encodings.Web.dll",
+        "lib/net8.0/System.Text.Encodings.Web.xml",
         "lib/netstandard2.0/System.Text.Encodings.Web.dll",
         "lib/netstandard2.0/System.Text.Encodings.Web.xml",
-        "lib/netstandard2.1/System.Text.Encodings.Web.dll",
-        "lib/netstandard2.1/System.Text.Encodings.Web.xml",
-        "system.text.encodings.web.5.0.0.nupkg.sha512",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.8.0.0.nupkg.sha512",
         "system.text.encodings.web.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/5.0.2": {
-      "sha512": "I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
+    "System.Text.Json/8.0.5": {
+      "sha512": "0f1B50Ss7rqxXiaBJyzUu9bWFOO2/zSlifZ/UNMdiIpDYe4cY4LQQicP4nirK1OS31I43rn062UIJ1Q9bpmHpg==",
       "type": "package",
-      "path": "system.text.json/5.0.2",
+      "path": "system.text.json/8.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net6.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net6.0/System.Text.Json.dll",
+        "lib/net6.0/System.Text.Json.xml",
+        "lib/net7.0/System.Text.Json.dll",
+        "lib/net7.0/System.Text.Json.xml",
+        "lib/net8.0/System.Text.Json.dll",
+        "lib/net8.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.5.0.2.nupkg.sha512",
+        "system.text.json.8.0.5.nupkg.sha512",
         "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.RegularExpressions/4.3.0": {
-      "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
+    "System.Text.RegularExpressions/4.3.1": {
+      "sha512": "N0kNRrWe4+nXOWlpLT4LAY5brb8caNFlUuIRpraCVMDLYutKkol1aV079rQjLuSxKMJT2SpBQsYX9xbcTMmzwg==",
       "type": "package",
-      "path": "system.text.regularexpressions/4.3.0",
+      "path": "system.text.regularexpressions/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -19396,7 +20107,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.text.regularexpressions.4.3.0.nupkg.sha512",
+        "system.text.regularexpressions.4.3.1.nupkg.sha512",
         "system.text.regularexpressions.nuspec"
       ]
     },
@@ -20233,6 +20944,44 @@
         "uipath.excel.activities.nuspec"
       ]
     },
+    "UiPath.Form.Activities/25.10.0": {
+      "sha512": "8wOOPg3WWxQfgryXvCAmDykGyRexMmjIP+Do1f74EQq9C0wbHQcCszUijvgjaUjhCTf8WRV3Gyt5Ny6y3pUe3g==",
+      "type": "package",
+      "path": "uipath.form.activities/25.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0-windows7.0/UiPath.Forms.Activities.Design.dll",
+        "lib/net6.0-windows7.0/UiPath.Forms.Activities.dll",
+        "lib/net6.0-windows7.0/de/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/de/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/es-MX/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/es-MX/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/es/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/es/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/fr/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/fr/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/ja/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/ja/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/ko/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/ko/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/pt-BR/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/pt-BR/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/pt/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/pt/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/ru/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/tr/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/tr/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/zh-TW/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/zh-TW/UiPath.Forms.Activities.resources.dll",
+        "lib/net6.0-windows7.0/zu/UiPath.Forms.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/zu/UiPath.Forms.Activities.resources.dll",
+        "uipath.form.activities.25.10.0.nupkg.sha512",
+        "uipath.form.activities.nuspec"
+      ]
+    },
     "UiPath.ImageProcessing/23.4.0": {
       "sha512": "riU8a5oAisvhhxciV++7pmsTNWcGtg2AiytNu+ttz7IZiCz9VHS1jlh5uzKvkUlDCgtShuExSZ5eOEVlfjTWwQ==",
       "type": "package",
@@ -20850,17 +21599,17 @@
         "uipath.ocr.contracts.nuspec"
       ]
     },
-    "UiPath.OpenTelemetry.Contracts/2.1.3": {
-      "sha512": "jK3dSVWZbdVBHBjh/S8yJ3v0OwMXxnceG9WaSMyhVM7MrCkc7LbatnAZSsJmxnJrsmAiZsdYHPl7DTMVinmPeg==",
+    "UiPath.OpenTelemetry.Contracts/2.3.3": {
+      "sha512": "ur3hOgQgeHjI7lbnNzevgS9wUa60semWnMks++RZCow4YQRSBL3O8IedENZh8WsPIl13mvlwIDLgovgkHFT/Eg==",
       "type": "package",
-      "path": "uipath.opentelemetry.contracts/2.1.3",
+      "path": "uipath.opentelemetry.contracts/2.3.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "UI_icon.png",
         "lib/net461/UiPath.OpenTelemetry.Contracts.dll",
         "lib/netstandard2.0/UiPath.OpenTelemetry.Contracts.dll",
-        "uipath.opentelemetry.contracts.2.1.3.nupkg.sha512",
+        "uipath.opentelemetry.contracts.2.3.3.nupkg.sha512",
         "uipath.opentelemetry.contracts.nuspec"
       ]
     },
@@ -20912,6 +21661,471 @@
         "lib/net6.0/zh-CN/UiPath.Platform.resources.dll",
         "uipath.platform.25.6.0.nupkg.sha512",
         "uipath.platform.nuspec"
+      ]
+    },
+    "UiPath.Studio.Forms.Runtime/25.10.0": {
+      "sha512": "AumF/egtSwhpzcCvcJJdYvyg9924/xvw4qR9bWSK1wiFZtitNc6Ok6g2lDckgWKBuDw0/G33PHDbaH27hfWzZg==",
+      "type": "package",
+      "path": "uipath.studio.forms.runtime/25.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "contentFiles/any/any/dist/ace/ace.js",
+        "contentFiles/any/any/dist/ace/ext-beautify.js",
+        "contentFiles/any/any/dist/ace/ext-elastic_tabstops_lite.js",
+        "contentFiles/any/any/dist/ace/ext-emmet.js",
+        "contentFiles/any/any/dist/ace/ext-error_marker.js",
+        "contentFiles/any/any/dist/ace/ext-keybinding_menu.js",
+        "contentFiles/any/any/dist/ace/ext-language_tools.js",
+        "contentFiles/any/any/dist/ace/ext-linking.js",
+        "contentFiles/any/any/dist/ace/ext-modelist.js",
+        "contentFiles/any/any/dist/ace/ext-options.js",
+        "contentFiles/any/any/dist/ace/ext-rtl.js",
+        "contentFiles/any/any/dist/ace/ext-searchbox.js",
+        "contentFiles/any/any/dist/ace/ext-settings_menu.js",
+        "contentFiles/any/any/dist/ace/ext-spellcheck.js",
+        "contentFiles/any/any/dist/ace/ext-split.js",
+        "contentFiles/any/any/dist/ace/ext-static_highlight.js",
+        "contentFiles/any/any/dist/ace/ext-statusbar.js",
+        "contentFiles/any/any/dist/ace/ext-textarea.js",
+        "contentFiles/any/any/dist/ace/ext-themelist.js",
+        "contentFiles/any/any/dist/ace/ext-whitespace.js",
+        "contentFiles/any/any/dist/ace/mode-html.js",
+        "contentFiles/any/any/dist/ace/mode-html_elixir.js",
+        "contentFiles/any/any/dist/ace/mode-html_ruby.js",
+        "contentFiles/any/any/dist/ace/mode-javascript.js",
+        "contentFiles/any/any/dist/ace/mode-json.js",
+        "contentFiles/any/any/dist/ace/mode-rhtml.js",
+        "contentFiles/any/any/dist/ace/theme-xcode.js",
+        "contentFiles/any/any/dist/ace/worker-html.js",
+        "contentFiles/any/any/dist/ace/worker-javascript.js",
+        "contentFiles/any/any/dist/ace/worker-json.js",
+        "contentFiles/any/any/dist/aggrid/ag-grid-community.min.js",
+        "contentFiles/any/any/dist/aggrid/styles/ag-grid.min.css",
+        "contentFiles/any/any/dist/aggrid/styles/ag-theme-alpine.min.css",
+        "contentFiles/any/any/dist/bootstrap.min.css",
+        "contentFiles/any/any/dist/bootstrap.min.js",
+        "contentFiles/any/any/dist/ckeditor/ckeditor.js",
+        "contentFiles/any/any/dist/ckeditor/translations/af.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ar.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ast.js",
+        "contentFiles/any/any/dist/ckeditor/translations/az.js",
+        "contentFiles/any/any/dist/ckeditor/translations/bg.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ca.js",
+        "contentFiles/any/any/dist/ckeditor/translations/cs.js",
+        "contentFiles/any/any/dist/ckeditor/translations/da.js",
+        "contentFiles/any/any/dist/ckeditor/translations/de-ch.js",
+        "contentFiles/any/any/dist/ckeditor/translations/de.js",
+        "contentFiles/any/any/dist/ckeditor/translations/el.js",
+        "contentFiles/any/any/dist/ckeditor/translations/en-au.js",
+        "contentFiles/any/any/dist/ckeditor/translations/en-gb.js",
+        "contentFiles/any/any/dist/ckeditor/translations/eo.js",
+        "contentFiles/any/any/dist/ckeditor/translations/es.js",
+        "contentFiles/any/any/dist/ckeditor/translations/et.js",
+        "contentFiles/any/any/dist/ckeditor/translations/eu.js",
+        "contentFiles/any/any/dist/ckeditor/translations/fa.js",
+        "contentFiles/any/any/dist/ckeditor/translations/fi.js",
+        "contentFiles/any/any/dist/ckeditor/translations/fr.js",
+        "contentFiles/any/any/dist/ckeditor/translations/gl.js",
+        "contentFiles/any/any/dist/ckeditor/translations/gu.js",
+        "contentFiles/any/any/dist/ckeditor/translations/he.js",
+        "contentFiles/any/any/dist/ckeditor/translations/hr.js",
+        "contentFiles/any/any/dist/ckeditor/translations/hu.js",
+        "contentFiles/any/any/dist/ckeditor/translations/id.js",
+        "contentFiles/any/any/dist/ckeditor/translations/it.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ja.js",
+        "contentFiles/any/any/dist/ckeditor/translations/km.js",
+        "contentFiles/any/any/dist/ckeditor/translations/kn.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ko.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ku.js",
+        "contentFiles/any/any/dist/ckeditor/translations/lt.js",
+        "contentFiles/any/any/dist/ckeditor/translations/lv.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ms.js",
+        "contentFiles/any/any/dist/ckeditor/translations/nb.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ne.js",
+        "contentFiles/any/any/dist/ckeditor/translations/nl.js",
+        "contentFiles/any/any/dist/ckeditor/translations/no.js",
+        "contentFiles/any/any/dist/ckeditor/translations/oc.js",
+        "contentFiles/any/any/dist/ckeditor/translations/pl.js",
+        "contentFiles/any/any/dist/ckeditor/translations/pt-br.js",
+        "contentFiles/any/any/dist/ckeditor/translations/pt.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ro.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ru.js",
+        "contentFiles/any/any/dist/ckeditor/translations/si.js",
+        "contentFiles/any/any/dist/ckeditor/translations/sk.js",
+        "contentFiles/any/any/dist/ckeditor/translations/sl.js",
+        "contentFiles/any/any/dist/ckeditor/translations/sq.js",
+        "contentFiles/any/any/dist/ckeditor/translations/sr-latn.js",
+        "contentFiles/any/any/dist/ckeditor/translations/sr.js",
+        "contentFiles/any/any/dist/ckeditor/translations/sv.js",
+        "contentFiles/any/any/dist/ckeditor/translations/th.js",
+        "contentFiles/any/any/dist/ckeditor/translations/tr.js",
+        "contentFiles/any/any/dist/ckeditor/translations/tt.js",
+        "contentFiles/any/any/dist/ckeditor/translations/ug.js",
+        "contentFiles/any/any/dist/ckeditor/translations/uk.js",
+        "contentFiles/any/any/dist/ckeditor/translations/vi.js",
+        "contentFiles/any/any/dist/ckeditor/translations/zh-cn.js",
+        "contentFiles/any/any/dist/ckeditor/translations/zh.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/index.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/default.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ar-dz.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ar.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-at.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-az.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-be.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-bg.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-bn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-bs.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-cat.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ckb.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-cs.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-cy.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-da.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-de.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-eo.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-es.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-et.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-fa.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-fi.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-fo.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-fr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ga.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-gr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-he.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-hi.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-hr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-hu.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-hy.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-id.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-is.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-it.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ja.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ka.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-km.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ko.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-kz.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-lt.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-lv.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-mk.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-mn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ms.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-my.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-nl.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-nn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-no.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-pa.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-pl.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-pt.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ro.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-ru.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-si.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-sk.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-sl.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-sq.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-sr-cyr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-sr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-sv.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-th.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-tr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-uk.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-uz.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-uz_latn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-vn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-zh-tw.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/flatpickr-zh.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/l10n/index.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/confirmDate/confirmDate.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/labelPlugin/labelPlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/minMaxTimePlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/momentPlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/monthSelect/index.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/rangePlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/scrollPlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/plugins/weekSelect/weekSelect.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/types/globals.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/types/instance.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/types/locale.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/types/options.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/utils/dates.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/utils/dom.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/utils/formatting.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/utils/index.js",
+        "contentFiles/any/any/dist/flatpickr-formio/esm/utils/polyfills.js",
+        "contentFiles/any/any/dist/flatpickr-formio/flatpickr.css",
+        "contentFiles/any/any/dist/flatpickr-formio/flatpickr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/flatpickr.min.css",
+        "contentFiles/any/any/dist/flatpickr-formio/flatpickr.min.js",
+        "contentFiles/any/any/dist/flatpickr-formio/ie.css",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/default.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/default.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ar-dz.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ar-dz.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ar.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ar.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-at.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-at.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-az.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-az.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-be.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-be.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-bg.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-bg.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-bn.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-bn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-bs.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-bs.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-cat.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-cat.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ckb.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ckb.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-cs.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-cs.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-cy.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-cy.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-da.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-da.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-de.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-de.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-eo.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-eo.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-es.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-es.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-et.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-et.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fa.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fa.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fi.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fi.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fo.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fo.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fr.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-fr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ga.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ga.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-gr.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-gr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-he.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-he.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hi.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hi.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hr.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hu.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hu.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hy.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-hy.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-id.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-id.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-is.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-is.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-it.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-it.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ja.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ja.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ka.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ka.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-km.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-km.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ko.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ko.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-kz.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-kz.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-lt.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-lt.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-lv.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-lv.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-mk.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-mk.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-mn.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-mn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ms.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ms.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-my.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-my.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-nl.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-nl.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-nn.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-nn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-no.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-no.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-pa.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-pa.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-pl.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-pl.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-pt.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-pt.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ro.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ro.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ru.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-ru.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-si.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-si.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sk.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sk.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sl.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sl.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sq.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sq.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sr-cyr.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sr-cyr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sr.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sv.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-sv.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-th.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-th.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-tr.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-tr.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-uk.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-uk.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-uz.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-uz.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-uz_latn.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-uz_latn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-vn.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-vn.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-zh-tw.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-zh-tw.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-zh.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/flatpickr-zh.js",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/index.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/l10n/index.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/confirmDate/confirmDate.css",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/confirmDate/confirmDate.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/confirmDate/confirmDate.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/labelPlugin/labelPlugin.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/labelPlugin/labelPlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/minMaxTimePlugin.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/minMaxTimePlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/momentPlugin.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/momentPlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/monthSelect/index.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/monthSelect/index.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/monthSelect/style.css",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/rangePlugin.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/rangePlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/scrollPlugin.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/scrollPlugin.js",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/weekSelect/weekSelect.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/plugins/weekSelect/weekSelect.js",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/airbnb.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/confetti.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/dark.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/light.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/material_blue.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/material_green.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/material_orange.css",
+        "contentFiles/any/any/dist/flatpickr-formio/themes/material_red.css",
+        "contentFiles/any/any/dist/flatpickr-formio/types/globals.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/types/instance.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/types/locale.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/types/options.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/typings.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/utils/dates.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/utils/dom.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/utils/formatting.d.ts",
+        "contentFiles/any/any/dist/flatpickr-formio/utils/index.d.ts",
+        "contentFiles/any/any/dist/fonts/font-awesome.min.css",
+        "contentFiles/any/any/dist/fonts/fontawesome-webfont.woff2",
+        "contentFiles/any/any/dist/formio/formio.full.min.css",
+        "contentFiles/any/any/dist/formio/formio.full.min.js",
+        "contentFiles/any/any/dist/jquery.min.js",
+        "contentFiles/any/any/dist/moment-timezone/data/meta/latest.json",
+        "contentFiles/any/any/dist/moment-timezone/data/packed/latest.json",
+        "contentFiles/any/any/dist/moment-timezone/moment-timezone.min.js",
+        "contentFiles/any/any/dist/moment/moment.min.js",
+        "contentFiles/any/any/dist/popperjs/popper-utils.min.js",
+        "contentFiles/any/any/dist/popperjs/popper.min.js",
+        "contentFiles/any/any/dist/require.js",
+        "contentFiles/any/any/dist/themes/cosmo/bootstrap.min.css",
+        "contentFiles/any/any/dist/themes/cyborg/bootstrap.min.css",
+        "contentFiles/any/any/dist/themes/default.custom.css",
+        "contentFiles/any/any/dist/themes/designer.css",
+        "contentFiles/any/any/dist/themes/flatly/bootstrap.min.css",
+        "contentFiles/any/any/dist/themes/main.css",
+        "contentFiles/any/any/dist/themes/override-dark.custom.css",
+        "contentFiles/any/any/dist/themes/override.custom.css",
+        "contentFiles/any/any/dist/themes/sandstone/bootstrap.min.css",
+        "contentFiles/any/any/dist/themes/tooltip.css",
+        "contentFiles/any/any/src/html/formio.host.html",
+        "contentFiles/any/any/src/ts/BaseController.js",
+        "contentFiles/any/any/src/ts/BaseController.js.map",
+        "contentFiles/any/any/src/ts/DesktopFormApiImpl.js",
+        "contentFiles/any/any/src/ts/DesktopFormApiImpl.js.map",
+        "contentFiles/any/any/src/ts/DesktopFormIoBootstraper.js",
+        "contentFiles/any/any/src/ts/DesktopFormIoBootstraper.js.map",
+        "contentFiles/any/any/src/ts/DesktopHtmlApiBootstraper.js",
+        "contentFiles/any/any/src/ts/DesktopHtmlApiBootstraper.js.map",
+        "contentFiles/any/any/src/ts/ExternalHostApi.js",
+        "contentFiles/any/any/src/ts/ExternalHostApi.js.map",
+        "contentFiles/any/any/src/ts/FormApi.js",
+        "contentFiles/any/any/src/ts/FormApi.js.map",
+        "contentFiles/any/any/src/ts/FormIoHost.js",
+        "contentFiles/any/any/src/ts/FormIoHost.js.map",
+        "contentFiles/any/any/src/ts/FormIoHostBootstraper.js",
+        "contentFiles/any/any/src/ts/FormIoHostBootstraper.js.map",
+        "contentFiles/any/any/src/ts/HtmlApi.js",
+        "contentFiles/any/any/src/ts/HtmlApi.js.map",
+        "contentFiles/any/any/src/ts/HtmlApiController.js",
+        "contentFiles/any/any/src/ts/HtmlApiController.js.map",
+        "contentFiles/any/any/src/ts/Messaging/MessageConstants.js",
+        "contentFiles/any/any/src/ts/Messaging/MessageConstants.js.map",
+        "contentFiles/any/any/src/ts/TargetApi.js",
+        "contentFiles/any/any/src/ts/TargetApi.js.map",
+        "contentFiles/any/any/src/ts/custom_components/DataTable.js",
+        "contentFiles/any/any/src/ts/custom_components/DataTable.js.map",
+        "contentFiles/any/any/src/ts/custom_components/FilePath.js",
+        "contentFiles/any/any/src/ts/custom_components/FilePath.js.map",
+        "contentFiles/any/any/src/ts/custom_components/FilePathRenderer.js",
+        "contentFiles/any/any/src/ts/custom_components/FilePathRenderer.js.map",
+        "contentFiles/any/any/src/ts/custom_components/Label.js",
+        "contentFiles/any/any/src/ts/custom_components/Label.js.map",
+        "contentFiles/any/any/src/ts/generated/BrowserPlatform/WebView2/UiPathMessagingWebview2.js",
+        "contentFiles/any/any/src/ts/generated/BrowserPlatform/WebView2/UiPathMessagingWebview2.js.map",
+        "contentFiles/any/any/src/ts/generated/FormsFramework/FormIo/FormIoConstants.js",
+        "contentFiles/any/any/src/ts/generated/FormsFramework/FormIo/FormIoConstants.js.map",
+        "contentFiles/any/any/src/ts/generated/FormsFramework/FormIo/FormIoThemes.js",
+        "contentFiles/any/any/src/ts/generated/FormsFramework/FormIo/FormIoThemes.js.map",
+        "contentFiles/any/any/src/ts/generated/FormsFramework/FormIo/FormIoUtilsCommon.js",
+        "contentFiles/any/any/src/ts/generated/FormsFramework/FormIo/FormIoUtilsCommon.js.map",
+        "contentFiles/any/any/src/ts/generated/Messaging/CommonMessageConstants.js",
+        "contentFiles/any/any/src/ts/generated/Messaging/CommonMessageConstants.js.map",
+        "contentFiles/any/any/src/ts/generated/Messaging/UiPathMessaging.js",
+        "contentFiles/any/any/src/ts/generated/Messaging/UiPathMessaging.js.map",
+        "contentFiles/any/any/src/ts/generated/SharedUtils.js",
+        "contentFiles/any/any/src/ts/generated/SharedUtils.js.map",
+        "contentFiles/any/any/src/ts/util/FormIoUtil.js",
+        "contentFiles/any/any/src/ts/util/FormIoUtil.js.map",
+        "lib/net6.0-windows7.0/UiPath.Studio.Forms.Runtime.dll",
+        "lib/net6.0-windows7.0/de/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/es-MX/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/es/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/fr/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/ja/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/ko/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/pt-BR/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/pt/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/ru/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/tr/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/zh-TW/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0-windows7.0/zu/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/UiPath.Studio.Forms.Runtime.dll",
+        "lib/net6.0/de/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/es-MX/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/es/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/fr/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/ja/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/ko/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/pt-BR/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/pt/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/ru/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/tr/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/zh-CN/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/zh-TW/UiPath.Studio.Forms.Runtime.resources.dll",
+        "lib/net6.0/zu/UiPath.Studio.Forms.Runtime.resources.dll",
+        "uipath.studio.forms.runtime.25.10.0.nupkg.sha512",
+        "uipath.studio.forms.runtime.nuspec"
       ]
     },
     "UiPath.System.Activities/23.10.5": {
@@ -21013,17 +22227,17 @@
         "uipath.system.activities.runtime.windows.nuspec"
       ]
     },
-    "UiPath.Telemetry.Client/2.1.3": {
-      "sha512": "J8P+1wLcXXwuBWtFEdzFxnSWDVTH/6plaGloTO0VaOAWDa3C4uMddB8OEpFH4ixM86JlYdg0hRw4m3aHzVZeIA==",
+    "UiPath.Telemetry.Client/2.3.3": {
+      "sha512": "ZEGLex036Ne5wyuWp/9ccbMFMEhwamyD+V/7jPq8+FwtYhN7Kq/cQQxhbDFQLfen/ehRoahRDB9P9M6PX818/g==",
       "type": "package",
-      "path": "uipath.telemetry.client/2.1.3",
+      "path": "uipath.telemetry.client/2.3.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "UI_icon.png",
         "lib/net461/TelemetryClient.dll",
         "lib/netstandard2.0/TelemetryClient.dll",
-        "uipath.telemetry.client.2.1.3.nupkg.sha512",
+        "uipath.telemetry.client.2.3.3.nupkg.sha512",
         "uipath.telemetry.client.nuspec"
       ]
     },
@@ -21918,6 +23132,7 @@
     "": [],
     "net6.0-windows7.0": [
       "UiPath.Excel.Activities >= 2.22.3 <= 2.22.3",
+      "UiPath.Form.Activities >= 25.10.0 <= 25.10.0",
       "UiPath.Mail.Activities >= 1.21.1 <= 1.21.1",
       "UiPath.System.Activities >= 23.10.5 <= 23.10.5",
       "UiPath.Testing.Activities >= 23.10.1 <= 23.10.1",
@@ -21926,16 +23141,16 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Skiuileuf\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ActualizarePluginuriServerMinecraft",
       "projectName": "ActualizarePluginuriServerMinecraft",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\ActualizarePluginuriServerMinecraft\\.local",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\ActualizarePluginuriServerMinecraft\\.local",
+      "projectPath": "C:\\Users\\Skiuileuf\\Documents\\UiPath\\ActualizarePluginuriServerMinecraft\\.local",
+      "packagesPath": "C:\\Users\\Skiuileuf\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Skiuileuf\\Documents\\UiPath\\ActualizarePluginuriServerMinecraft\\.local",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ]
@@ -21947,6 +23162,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[2.22.3, 2.22.3]"
+          },
+          "UiPath.Form.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[25.10.0, 25.10.0]"
           },
           "UiPath.Mail.Activities": {
             "include": "Runtime",
@@ -21974,7 +23194,7 @@
             "version": "[2.3.2, 2.3.2]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Skiuileuf\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

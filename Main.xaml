@@ -409,6 +409,9 @@
                     <InArgument x:TypeArguments="x:String" x:Key="link">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">(string)plugin["Link"]</CSharpValue>
                     </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="version">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">minecraftVersion</CSharpValue>
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
