@@ -4,7 +4,7 @@
     <x:Property Name="version" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1222,1456</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1222,1981</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -111,19 +111,19 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Modrinth" sap:VirtualizedContainerService.HintSize="546,1391" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Modrinth" sap:VirtualizedContainerService.HintSize="546,1916" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: DiscordSRV - Minecraft Plugin" sap:VirtualizedContainerService.HintSize="484,1280" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2c4c702e-1902-49af-9201-728362dd36bd" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: DiscordSRV - Minecraft Plugin" sap:VirtualizedContainerService.HintSize="484,1805" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2c4c702e-1902-49af-9201-728362dd36bd" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1063" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1588" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="modsList" />
             </Sequence.Variables>
@@ -183,18 +183,18 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Game versions'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Game versions'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="494, 400, 191, 36" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Game versions'" FullSelectorArgument="&lt;webctrl aaname=' Game versions ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Game versions ' tag='BUTTON' type='' class='' check:innerText='Game versions' /&gt;" Guid="23017919-03f6-4a52-b578-5fcc70e92410" InformativeScreenshot="76dbfae4d6674c6e4617161719ad98e6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT search-input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT search-input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2c4c702e-1902-49af-9201-728362dd36bd" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://modrinth.com/plugin/discordsrv/versions" DesignTimeRectangle="404, 450, 272, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT search-input'" FullSelectorArgument="&lt;webctrl id='search-input' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-input' tag='INPUT' type='text' class='' aaname='Search...' /&gt;" Guid="c1f6ffb0-b612-4551-8799-953426807765" InformativeScreenshot="2a7a0903ba4e09554fe50fe8b352e7cd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='DiscordSRV - Minecraft Plugin' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -211,23 +211,23 @@
               </uix:NTypeInto.Text>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(Tab)][u(hk)][d(hk)][k(tab)][u(hk)]" Version="V3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>

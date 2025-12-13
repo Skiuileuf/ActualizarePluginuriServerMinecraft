@@ -14,21 +14,26 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "configPlatform&Sequence_1",
+        "configPlugins&Sequence_1",
+        "configJson&Sequence_1",
+        "configText&Sequence_1",
         "supportedPlatforms&Sequence_11",
         "selectedConfiguration&Sequence_1",
         "serverConfigurations&Sequence_1",
         "versions&Sequence_1",
-        "minecraftVersion&Sequence_1",
-        "excelContents&Sequence_1"
+        "minecraftVersion&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "Spigot.xaml",
+      "Path": "PluginProviders/Spigot.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_11"
+      ],
       "ArgumentsSectionElementsOrder": [
         "link"
       ],
@@ -36,9 +41,10 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Modrinth.xaml",
+      "Path": "PluginProviders/Modrinth.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_11",
         "modsList&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -63,38 +69,28 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "ConfigEditor.xaml",
+      "Path": "ScrapePluginsToExcelFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "configurationObject&Sequence_2",
-        "strFileContents&Sequence_2",
-        "supportedPlatforms&Sequence_4",
-        "serverConfigurations&Sequence_1"
+        "supportedPlatforms&Sequence_11",
+        "serverConfigurations&Sequence_1",
+        "selectedConfiguration&Sequence_1",
+        "excelContents&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "EditTrigger.xaml",
+      "Path": ".templates/PluginProviderTemplate.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "supportedPlatforms&Sequence_4"
+        "supportedPlatforms&Sequence_11"
       ],
       "ArgumentsSectionElementsOrder": [
-        "TriggerEventArgs"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "CreateTrigger.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "supportedPlatforms&Sequence_4"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "TriggerEventArgs"
+        "platform",
+        "version",
+        "link"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
