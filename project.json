@@ -45,7 +45,12 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\PluginProviderTemplate.xaml"
+      }
+    ],
     "modernBehavior": true,
     "saveToCloud": false
   },
