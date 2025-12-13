@@ -52,6 +52,7 @@
       "Path": "GetAllMinecraftVersions.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_11",
         "jsonObject&Sequence_1",
         "httpRequestResult&Sequence_1"
       ],

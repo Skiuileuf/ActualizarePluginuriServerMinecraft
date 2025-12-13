@@ -1,16 +1,1 @@
-{
-"Version": "1.21.10",
-"Platform": "paper",
-"Plugins": [
-  {
-	"Name": "PluginOne",
-	"Link": "https://example.com/plugin1",
-	"Source": "Internal"
-  },
-  {
-	"Name": "PluginTwo",
-	"Link": "https://example.com/plugin2",
-	"Source": "External"
-  }
-]
-}
+{"Name":"smp","Version":"1.21.11","Platform":"paper","Plugins":[{"Name":"Chunker","Platform":"","Link":"https://www.spigotmc.org/resources/chunker.117744/","Enabled":false},{"Name":"DIscordSRV","Platform":"","Link":"https://modrinth.com/plugin/discordsrv","Enabled":true},{"Name":"FastLoginBukkit","Platform":"","Link":"https://www.spigotmc.org/resources/fastlogin.14153/","Enabled":true},{"Name":"ForgetfulTrialVault","Platform":"","Link":"https://www.spigotmc.org/resources/forgetful-trial-vault.117786/","Enabled":true},{"Name":"InteractionVizualizer","Platform":"","Link":"https://modrinth.com/plugin/interactionvisualizer","Enabled":false},{"Name":"InteractiveChat","Platform":"","Link":"https://modrinth.com/plugin/interactivechat","Enabled":true},{"Name":"InteractiveChatDiscordSrvAddon","Platform":"","Link":"https://modrinth.com/plugin/interactivechat-discordsrv-addon/","Enabled":true},{"Name":"LuckPerms","Platform":"","Link":"https://luckperms.net/","Enabled":true},{"Name":"MapModCompanion","Platform":"","Link":"https://www.spigotmc.org/resources/mapmodcompanion.105128/","Enabled":true},{"Name":"PlaceholderAPI","Platform":"","Link":"https://www.spigotmc.org/resources/placeholderapi.6245/","Enabled":true},{"Name":"ProtocolLib","Platform":"","Link":"https://www.spigotmc.org/resources/protocollib.1997/","Enabled":true},{"Name":"rtag","Platform":"","Link":"https://www.spigotmc.org/resources/rtag-api-to-edit-block-entity-item-nbt-1-8-8-1-21-10.100694/","Enabled":true},{"Name":"squaremap","Platform":"","Link":"https://modrinth.com/plugin/squaremap","Enabled":true},{"Name":"squaremap-banners","Platform":"","Link":"https://github.com/jpenilla/squaremap-addons","Enabled":true},{"Name":"squaremap-signs","Platform":"","Link":"https://github.com/jpenilla/squaremap-addons","Enabled":true},{"Name":"tabtps","Platform":"","Link":"https://www.spigotmc.org/resources/tabtps-1-8-8-1-21-8-show-tps-mspt-and-more-in-the-tab-menu.82528/","Enabled":true},{"Name":"toolstats","Platform":"","Link":"https://www.spigotmc.org/resources/toolstats.99606/","Enabled":true},{"Name":"Vault","Platform":"","Link":"https://www.spigotmc.org/resources/vault.34315/","Enabled":true},{"Name":"WildLoaders","Platform":"","Link":"https://www.spigotmc.org/resources/%E2%9A%A1%EF%B8%8F-wildloaders-%E2%9A%A1%EF%B8%8F-load-chunks-without-alts-%E2%9A%A1%EF%B8%8F-1-21-10-support.87410/","Enabled":true}]}
