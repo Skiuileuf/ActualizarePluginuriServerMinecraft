@@ -14,11 +14,14 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "resultMessage&Sequence_13",
+        "resultCode&Sequence_13",
+        "dtResults&Sequence_1",
+        "supportedPlatforms&Sequence_16",
         "configPlatform&Sequence_1",
         "configPlugins&Sequence_1",
         "configJson&Sequence_1",
         "configText&Sequence_1",
-        "supportedPlatforms&Sequence_11",
         "selectedConfiguration&Sequence_1",
         "serverConfigurations&Sequence_1",
         "versions&Sequence_1",
@@ -44,7 +47,7 @@
       "Path": "PluginProviders/Modrinth.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "supportedPlatforms&Sequence_11",
+        "supportedPlatforms&Sequence_16",
         "modsList&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -58,7 +61,7 @@
       "Path": "GetAllMinecraftVersions.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "supportedPlatforms&Sequence_11",
+        "supportedPlatforms&Sequence_16",
         "jsonObject&Sequence_1",
         "httpRequestResult&Sequence_1"
       ],
@@ -85,9 +88,11 @@
       "Path": ".templates/PluginProviderTemplate.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "supportedPlatforms&Sequence_11"
+        "supportedPlatforms&Sequence_16"
       ],
       "ArgumentsSectionElementsOrder": [
+        "statusMessage",
+        "statusCode",
         "platform",
         "version",
         "link"
