@@ -137,7 +137,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="711,2269" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="711,2402" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="minecraftVersion" />
       <Variable x:TypeArguments="x:String" Name="versions" />
@@ -360,13 +360,13 @@
         </OutArgument>
       </ui:BuildDataTable.DataTable>
     </ui:BuildDataTable>
-    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="649,1158" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="649,1291" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JToken">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="njl:JToken" Name="plugin" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="615,972" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="615,1105" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="resultCode" />
               <Variable x:TypeArguments="x:String" Name="resultMessage" />
@@ -376,7 +376,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If DisplayName="If plugin entry disabled" sap:VirtualizedContainerService.HintSize="573,884" sap2010:WorkflowViewState.IdRef="If_2">
+            <If DisplayName="If plugin entry disabled" sap:VirtualizedContainerService.HintSize="573,1017" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">(bool)plugin["Enabled"] == false</CSharpValue>
@@ -417,7 +417,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="539,702" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence sap:VirtualizedContainerService.HintSize="539,835" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -441,7 +441,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="497,341" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="497,474" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <Switch.Default>
                       <Sequence DisplayName="seqDefault" sap:VirtualizedContainerService.HintSize="541,439" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
@@ -515,10 +515,10 @@
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">(string)plugin["Link"]</CSharpValue>
                           </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="version">
-                            <Literal x:TypeArguments="x:String">1.21.5</Literal>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">minecraftVersion</CSharpValue>
                           </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="platform">
-                            <Literal x:TypeArguments="x:String">Paper</Literal>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">configPlatform</CSharpValue>
                           </InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="statusCode">
                             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">resultCode</CSharpReference>
@@ -545,7 +545,7 @@
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">minecraftVersion</CSharpValue>
                           </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="platform">
-                            <Literal x:TypeArguments="x:String">Paper</Literal>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">configPlatform</CSharpValue>
                           </InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="statusCode">
                             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">resultCode</CSharpReference>
@@ -572,6 +572,25 @@
                         </OutArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="statusMessage">
                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">resultMessage</CSharpReference>
+                        </OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FASTLOGIN" DisplayName="PluginProviders\\Github-FastLogin.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="PluginProviders\\Github-FastLogin.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="link">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="version">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">minecraftVersion</CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="platform">
+                          <Literal x:TypeArguments="x:String">Paper</Literal>
+                        </InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="statusCode">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">resultCode</CSharpReference>
+                        </OutArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="statusMessage">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">resultMessage</CSharpReference>
                         </OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>

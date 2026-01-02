@@ -35,9 +35,13 @@
       "Path": "PluginProviders/Spigot.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "supportedPlatforms&Sequence_11"
+        "supportedPlatforms&Sequence_16"
       ],
       "ArgumentsSectionElementsOrder": [
+        "platform",
+        "statusCode",
+        "statusMessage",
+        "version",
         "link"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -51,6 +55,9 @@
         "modsList&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
+        "statusCode",
+        "statusMessage",
+        "platform",
         "version",
         "link"
       ],
@@ -96,6 +103,54 @@
         "platform",
         "version",
         "link"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PluginProviders/LuckPerms.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_16"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "link",
+        "version",
+        "platform",
+        "statusCode",
+        "statusMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PluginProviders/Squaremap-Addons.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_16"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "link",
+        "version",
+        "platform",
+        "statusCode",
+        "statusMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PluginProviders/Github-FastLogin.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "supportedPlatforms&Sequence_16"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "link",
+        "version",
+        "platform",
+        "statusCode",
+        "statusMessage"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
